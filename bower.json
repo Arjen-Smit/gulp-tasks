@@ -1,0 +1,23 @@
+{
+  "name": "gulp-tasks",
+  "version": "0.0.1",
+  "authors": [
+    "Arjen Smit <arjen@alnitak.nl>"
+  ],
+  "description": "A collection of tasks that can be loaded by gulp",
+  "main": "tasks/default.js",
+  "keywords": [
+    "gulp",
+    "tasks"
+  ],
+  "license": "Connect Holland",
+  "homepage": "www.connectholland.nl",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
