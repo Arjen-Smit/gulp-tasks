@@ -3,12 +3,12 @@
 module.exports = function(gulp, config, plugins) {
   	return function() {
   		var gutil = plugins.util;
-  		
+
   		var mainTasklist = [
-  			{task: "help", description: "Show these instrcutions"},
-  			{task: "prod", description: "Executing all the tasks for production"},
-  			{task: "dev", description: "Executing all the tasks without minification"},
-  			{task: "watch", description: "Executing dev and adding watchers to monitor for change"}
+  			{task: "help   ", description: "Show these instructions"},
+            {task: "install", description: "Build all pre-generated files like sprites or iconfonts"},
+  			{task: "default", description: "Executing all the tasks for production"},
+  			{task: "watch  ", description: "Executing without minifying and adding watchers to monitor for change"}
   		];
 
   		var seperateTasklist = [
@@ -19,29 +19,29 @@ module.exports = function(gulp, config, plugins) {
   		];
 
   		gutil.log('');
-		gutil.log(gutil.colors.red.bold('[Connect Holland]'), 
+		gutil.log(gutil.colors.red.bold('[Connect Holland]'),
   	 		gutil.colors.cyan('gulp documentation'));
 
 		gutil.log('');
 		gutil.log('Before running any of these tasks make sure you run', gutil.colors.cyan.bold('npm install'), 'and', gutil.colors.cyan.bold('bower install'), 'to make sure all the external sources are loaded');
 
 		gutil.log('');
-		gutil.log(gutil.colors.magenta.bold('Main tasks'));		
+		gutil.log(gutil.colors.magenta.bold('Main tasks'));
 
   		mainTasklist.forEach(function(task) {
   			gutil.log(
   				gutil.colors.magenta('gulp'),
-  				gutil.colors.cyan(task.task), 
+  				gutil.colors.cyan(task.task),
   				'\t' + task.description
   			)
   		});
   		gutil.log('');
-  		gutil.log(gutil.colors.magenta.bold('Seperate tasks'));		
-  		
+  		gutil.log(gutil.colors.magenta.bold('Seperate tasks'));
+
 		seperateTasklist.forEach(function(task) {
   			gutil.log(
   				gutil.colors.magenta('gulp'),
-  				gutil.colors.cyan(task.task), 
+  				gutil.colors.cyan(task.task),
   				'\t' + task.description
   			)
   		});
