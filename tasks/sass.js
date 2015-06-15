@@ -18,6 +18,7 @@ module.exports = function(gulp, config, plugins) {
                     plugins.sourcemaps.write('../maps')
                 )
             )
-	  		.pipe(gulp.dest(config.sass.dest));
+	  		.pipe(gulp.dest(config.sass.dest))
+			.pipe(plugins.livereload());
 	}
 };
