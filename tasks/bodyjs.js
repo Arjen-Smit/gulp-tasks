@@ -13,5 +13,5 @@ module.exports = function(gulp, config, plugins) {
             )
             .pipe(gulp.dest(config.bodyjs.dest))
             .pipe(plugins.livereload());
-	}
+	};
 };

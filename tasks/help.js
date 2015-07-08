@@ -49,5 +49,5 @@ module.exports = function(gulp, config, plugins) {
   		gutil.log('Written by Arjen Smit');
 
   		return {};
-  	}
+  	};
 };

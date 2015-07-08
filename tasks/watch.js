@@ -13,5 +13,5 @@ module.exports = function(gulp, config, plugins) {
 			}
         })
         return true;
-	}
+	};
 };
