@@ -14,11 +14,13 @@ module.exports = function(gulp, config, plugins) {
 	        }))
             .pipe(
                 plugins.if(config.production,
-                    plugins.moreCss(),
+                    plugins.moreCss({
+						radical: false
+					}),
                     plugins.sourcemaps.write('../maps')
                 )
             )
 	  		.pipe(gulp.dest(config.sass.dest))
 			.pipe(plugins.livereload());
-	}
+	};
 };
