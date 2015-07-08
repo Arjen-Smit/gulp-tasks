@@ -16,9 +16,8 @@ module.exports = function(gulp, config, plugins) {
                         pseudo: 'before'
                     }))
                     .pipe(plugins.rename('_icon.scss'))
-                    .pipe(gulp.dest('style/generated/'));
-
+                    .pipe(gulp.dest(config.icons.generatedScss || 'style/generated/'));
             })
             .pipe(gulp.dest(config.icons.dest));
-	}
+	};
 };
