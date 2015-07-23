@@ -3,8 +3,7 @@
 module.exports = function(gulp, config, plugins) {
   	return function() {
 	  	return gulp.src(config.sass.src)
-            .pipe(plugins.plumber())
-            .pipe(plugins.sourcemaps.init())
+        .pipe(plugins.sourcemaps.init())
 	  		.pipe(plugins.sass({
 	  				includePaths : config.sass.includePaths
 	  		}))
