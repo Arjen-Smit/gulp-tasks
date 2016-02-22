@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = function(gulp, config, plugins) {
-  	return function() {
-	  	return gulp.src(config.icons.src)
+    return function() {
+        return gulp.src(config.icons.src)
             .pipe(plugins.iconfont({
                 fontName: 'icon',
                 normalize: true,
@@ -19,5 +19,5 @@ module.exports = function(gulp, config, plugins) {
                     .pipe(gulp.dest(config.icons.generatedScss || 'style/generated/'));
             })
             .pipe(gulp.dest(config.icons.dest));
-	};
+    };
 };
