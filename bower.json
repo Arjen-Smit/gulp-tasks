@@ -13,7 +13,7 @@
     "tasks"
   ],
   "dependencies": {
-        "gulp-iconfont-template": "svn+ssh://svn.repositories.connectholland.nl/srv/svn/main/bower_components/gulp-iconfont-template/#~2.0"
+    "gulp-iconfont-template": "git@github.com:ConnectHolland/gulp-iconfont-template.git#^2.0.3"
   },
   "license": "MIT",
   "private": true,
