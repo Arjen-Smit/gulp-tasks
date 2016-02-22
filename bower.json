@@ -1,21 +1,21 @@
 {
   "name": "gulp-tasks",
   "version": "2.1.1",
+  "homepage": "https://github.com/ConnectHolland/gulp-tasks",
   "authors": [
     "Arjen Smit <arjen@Connectholland.nl>",
     "Giso Stallenberg <giso@connectholland.nl>"
   ],
-  "description": "A collection of tasks that can be loaded by gulp",
+  "description": "A collection of tasks to load by gulp",
   "main": "tasks/default.js",
   "keywords": [
     "gulp",
     "tasks"
   ],
   "dependencies": {
-    "gulp-iconfont-template": "svn+ssh://svn.repositories.connectholland.nl/srv/svn/main/bower_components/gulp-iconfont-template/#~2.0"
+        "gulp-iconfont-template": "svn+ssh://svn.repositories.connectholland.nl/srv/svn/main/bower_components/gulp-iconfont-template/#~2.0"
   },
   "license": "MIT",
-  "homepage": "www.connectholland.nl",
   "private": true,
   "ignore": [
     "**/.*",
