@@ -1,2 +1,6 @@
-
+// Initialize the inline images map
+@function map-set($map, $key, $value) {
+    $new: ($key: $value);
+    @return map-merge($map, $new);
+}
 $inline-images: ();
