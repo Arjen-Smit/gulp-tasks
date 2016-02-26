@@ -7,9 +7,9 @@
     @content;
 }
 
-// Create icon classes
+// Create css classes
 @each $name, $url in $inline-images {
-    .icon-#{$name} {
+    .inline-image-#{$name} {
         @include inline-image('#{$name}');
     }
 }

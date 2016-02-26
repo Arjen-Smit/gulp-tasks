@@ -12,11 +12,11 @@ module.exports = function(gulp, config, plugins) {
         return gulp.src(config['inline-images'].src)
             .pipe(imageDataURI({
                 template: {
-                    file: __dirname + '/templates/image-data-uri-template.scss'
+                    file: __dirname + '/inline-images/image-data-uri-template.scss'
                 }
             }))
-            .pipe(addsrc.prepend(__dirname + '/templates/_inline-images-prepend.scss'))
-            .pipe(addsrc.append(__dirname + '/templates/_inline-images-append.scss'))
+            .pipe(addsrc.prepend(__dirname + '/inline-images/_inline-images-prepend.scss'))
+            .pipe(addsrc.append(__dirname + '/inline-images/_inline-images-append.scss'))
             .pipe(concat('_inline-images.scss'))
             .pipe(gulp.dest('./style/generated'));
     };
