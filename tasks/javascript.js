@@ -8,8 +8,17 @@ module.exports = function (gulp, config, plugins) {
                 plugins['include'] = plugins.util.noop;
             }
 
-            return gulp.src(item.src)
-                .pipe(plugins.sourcemaps.init())
+            var result = gulp.src(item.src)
+                .pipe(plugins.sourcemaps.init());
+
+            if (item.es2015 === true) {
+                // Transpile es2015
+                result
+                    .pipe(plugins.plumber())
+                    .pipe(plugins.babel({presets: ['es2015']}));
+            }
+
+            result
                 .pipe(plugins.concat(item.outputname))
                 .pipe(plugins.include() )
                 .pipe(
@@ -20,6 +29,8 @@ module.exports = function (gulp, config, plugins) {
                 )
                 .pipe(gulp.dest(item.dest))
                 .pipe(plugins.livereload());
+            
+            return result;
         });
     };
 };

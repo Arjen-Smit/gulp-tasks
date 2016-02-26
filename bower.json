@@ -13,7 +13,8 @@
     "tasks"
   ],
   "dependencies": {
-    "gulp-iconfont-template": "git@github.com:ConnectHolland/gulp-iconfont-template.git#^2.0.3"
+    "gulp-iconfont-template": "git@github.com:ConnectHolland/gulp-iconfont-template.git#^2.0.3",
+    "babel-polyfill": "^0.0.1"
   },
   "license": "MIT",
   "private": true,
