@@ -1,0 +1,15 @@
+// Inline image mixin
+@mixin inline-image($name) {
+    $image-uri: map-get($inline-images, $name);
+    background-image: url('#{$image-uri}');
+    background-size: 100%;
+
+    @content;
+}
+
+// Create css classes
+@each $name, $url in $inline-images {
+    .inline-image-#{$name} {
+        @include inline-image('#{$name}');
+    }
+}
