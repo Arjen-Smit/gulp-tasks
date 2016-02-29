@@ -5,7 +5,7 @@ module.exports = function (gulp, config, plugins) {
         config.javascript.items.forEach(function(item) {
 
             if (typeof plugins['include'] == 'undefined') {
-                plugins['include'] = plugins.nop;
+                plugins['include'] = plugins.util.noop;
             }
 
             return gulp.src(item.src)
