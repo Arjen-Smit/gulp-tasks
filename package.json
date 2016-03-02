@@ -1,0 +1,36 @@
+{
+  "name": "gulp-tasks",
+  "version": "2.2.2",
+  "description": "A collection of tasks to load by gulp",
+  "main": "tasks/default.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-consolidate": "^0.2.0",
+    "gulp-iconfont": "^6.0.0",
+    "gulp-if": "^2.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-more-css": "^1.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-simple-task-loader": "^1.0.38",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-svgmin": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.4",
+    "lodash": "^4.6.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ConnectHolland/gulp-tasks.git"
+  },
+  "author": "Arjen Smit",
+  "license": "proprietary",
+  "bugs": {
+    "url": "https://github.com/ConnectHolland/gulp-tasks/issues"
+  },
+  "homepage": "https://github.com/ConnectHolland/gulp-tasks#readme"
+}
