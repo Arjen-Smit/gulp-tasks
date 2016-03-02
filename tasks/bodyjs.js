@@ -4,7 +4,7 @@ module.exports = function (gulp, config, plugins) {
     return function () {
 
         if (typeof plugins['include'] == 'undefined') {
-            plugins['include'] = plugins.nop;
+            plugins['include'] = plugins.util.noop;
         }
 
         return gulp.src(config.bodyjs.src)
