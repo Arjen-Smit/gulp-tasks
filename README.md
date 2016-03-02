@@ -9,6 +9,31 @@ Add to bower.json
 }
 ```
 
+## Javascript task
+
+To use the EcmaScript 2015 (ES6) transpiling, add the following dependencies:
+```bash
+npm install babel-preset-es2015 gulp-babel gulp-plumber --save-dev
+```
+
+Example configuration:
+```json
+    "javascript": {
+        "items": [
+            {
+                "src": [
+                    "bower_components/babel-polyfill/browser-polyfill.js",
+                    "javascript/app.js"
+                ],
+                "outputname": "app.js",
+                "dest": "../../web/assets/javascript/",
+                "options": {},
+                "es2015": true
+            }
+        ],
+    }
+```
+
 ## Inline images task
 
 With the task inline-images you can create a 'sprite' of inline css images. The task
