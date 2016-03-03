@@ -8,7 +8,7 @@ module.exports = function(gulp, config, plugins) {
                 normalize: true,
                 fontHeight: 1001 }))
             .on('glyphs', function (glyphs) {
-                gulp.src('bower_components/gulp-iconfont-template/_template.scss')
+                gulp.src(__dirname + '/icons/_template.scss')
                     .pipe(plugins.consolidate('lodash', {
                         glyphs: glyphs,
                         fontName: 'icon',
