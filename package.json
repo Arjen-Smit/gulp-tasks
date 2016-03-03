@@ -33,7 +33,7 @@
     "url": "git+https://github.com/ConnectHolland/gulp-tasks.git"
   },
   "author": "Arjen Smit",
-  "license": "proprietary",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ConnectHolland/gulp-tasks/issues"
   },
