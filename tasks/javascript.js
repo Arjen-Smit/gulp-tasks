@@ -2,6 +2,38 @@
 
 module.exports = function (gulp, config) {
     return function () {
+        /**
+         * Add linter with configuration to an item
+         *
+         * @param {type} result
+         * @param {type} item
+         * @returns {unresolved}
+         */
+        var addLinter = function (result, item) {
+            var eslint = require('gulp-eslint');
+            var eslintOptions = {
+                extends: 'eslint:recommended',
+                envs: ["browser"],
+                rules: {
+                    "no-console": 1,
+                    "no-unused-vars": 1,
+                    "no-undef": 1
+                },
+                globals: {
+                    "jQuery": false
+                }
+            };
+
+            if (item.es2015 === true) {
+                eslintOptions.envs = ["es6", "browser"];
+            }
+
+            result
+                .pipe(eslint(eslintOptions))
+                .pipe(eslint.format())
+                .pipe(eslint.failAfterError());
+            return result;
+        };
 
         var sourcemaps = require('gulp-sourcemaps');
         var util = require('gulp-util');
@@ -17,6 +49,10 @@ module.exports = function (gulp, config) {
 
             var result = gulp.src(item.src)
                 .pipe(sourcemaps.init());
+
+            if (item.eslint) {
+                addLinter(result, item);
+            }
 
             if (item.es2015 === true) {
                 // Transpile es2015
