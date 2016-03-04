@@ -13,25 +13,17 @@ module.exports = function (gulp, config) {
             var eslint = require('gulp-eslint');
             var eslintOptions = {
                 extends: 'eslint:recommended',
-                envs: ["browser"],
-                rules: {
-                    "no-console": 1,
-                    "no-unused-vars": 1,
-                    "no-undef": 1
-                },
-                globals: {
-                    "jQuery": false
-                }
+                envs: ["browser", "jquery", "prototypejs"],
             };
 
             if (item.es2015 === true) {
-                eslintOptions.envs = ["es6", "browser"];
+                eslintOptions.envs.push("es6");
             }
 
             result
                 .pipe(eslint(eslintOptions))
                 .pipe(eslint.format())
-                .pipe(eslint.failAfterError());
+            
             return result;
         };
 
