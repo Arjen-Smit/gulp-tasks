@@ -23,6 +23,7 @@ module.exports = function (gulp, config) {
             result
                 .pipe(eslint(eslintOptions))
                 .pipe(eslint.format())
+
             return result;
         };
 
