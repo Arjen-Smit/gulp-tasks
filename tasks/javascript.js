@@ -23,7 +23,7 @@ module.exports = function (gulp, config) {
             result
                 .pipe(eslint(eslintOptions))
                 .pipe(eslint.format())
-            
+
             return result;
         };
 
@@ -42,7 +42,7 @@ module.exports = function (gulp, config) {
             var result = gulp.src(item.src)
                 .pipe(sourcemaps.init());
 
-            if (item.eslint) {
+            if (item.lint) {
                 addLinter(result, item);
             }
 
