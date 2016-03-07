@@ -1,8 +1,8 @@
 'use strict';
 
-module.exports = function(gulp, config, plugins) {
+module.exports = function(gulp, config) {
     return function() {
-        var gutil = plugins.util;
+        var gutil = require('gulp-util');
 
         var mainTasklist = [
             {task: "help   ", description: "Show these instructions"},

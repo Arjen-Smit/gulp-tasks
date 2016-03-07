@@ -1,9 +1,12 @@
 'use strict';
 
-module.exports = function(gulp, config, plugins) {
+module.exports = function(gulp, config) {
     return function() {
+
+        var livereload = require('gulp-livereload');
+
         config.production = false;
-        plugins.livereload.listen();
+        livereload.listen();
         gulp.start(config.default_tasks);
         config.default_tasks.forEach(function(task) {
             if (config[task].watch) {
