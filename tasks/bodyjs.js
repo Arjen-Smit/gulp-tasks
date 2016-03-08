@@ -1,23 +1,27 @@
 'use strict';
 
-module.exports = function (gulp, config, plugins) {
+module.exports = function (gulp, config) {
     return function () {
 
-        if (typeof plugins['include'] == 'undefined') {
-            plugins['include'] = plugins.util.noop;
-        }
+        var sourcemaps = require('gulp-sourcemaps');
+        var util = require('gulp-util');
+        var livereload = require('gulp-livereload');
+        var concat = require('gulp-concat');
+        var gulpif = require('gulp-if');
+        var include = require('gulp-include');
+        var uglify = require('gulp-uglify');
 
         return gulp.src(config.bodyjs.src)
-            .pipe(plugins.sourcemaps.init())
-            .pipe(plugins.concat('body.min.js'))
-            .pipe(plugins.include() )
+            .pipe(sourcemaps.init())
+            .pipe(concat('body.min.js'))
+            .pipe(include() )
             .pipe(
-                plugins.if(config.production,
-                    plugins.uglify(config.bodyjs.options),
-                    plugins.sourcemaps.write('../maps')
+                gulpif(config.production,
+                    uglify(config.bodyjs.options),
+                    sourcemaps.write('../maps')
                 )
             )
             .pipe(gulp.dest(config.bodyjs.dest))
-            .pipe(plugins.livereload());
+            .pipe(livereload());
     };
 };
