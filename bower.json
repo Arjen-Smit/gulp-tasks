@@ -1,6 +1,6 @@
 {
-  "name": "gulp-tasks",
-  "version": "2.2.1",
+  "name": "connectholland-gulp-tasks",
+  "version": "2.2.3",
   "homepage": "https://github.com/ConnectHolland/gulp-tasks",
   "authors": [
     "Arjen Smit <arjen@Connectholland.nl>",
