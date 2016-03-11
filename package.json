@@ -22,6 +22,7 @@
     "gulp-plumber": "^1.1.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.2.0",
+    "gulp-scss-lint": "^0.3.9",
     "gulp-simple-task-loader": "^1.0.38",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-svgmin": "^1.2.2",
