@@ -9,9 +9,10 @@ module.exports = function(gulp, config) {
         var sass = require('gulp-sass');
         var plumber = require('gulp-plumber');
         var autoprefixer = require('gulp-autoprefixer');
-        var gulpif = require('gulp-if');
+        var gulpIf = require('gulp-if');
         var moreCss = require('gulp-more-css');
         var livereload = require('gulp-livereload');
+        var scssLint = require('gulp-scss-lint');
 
         /* function to run on execution */
         return gulp.src(config.sass.src)
@@ -22,6 +23,11 @@ module.exports = function(gulp, config) {
                     this.emit('end');
                 }
             }))
+            .pipe(
+                scssLint({
+                    'config': '.scss-lint.yml'
+                })
+            )
             .pipe(sourcemaps.init())
             .pipe(sass({
                     includePaths : config.sass.includePaths
@@ -32,7 +38,7 @@ module.exports = function(gulp, config) {
                 remove: true
             }))
             .pipe(
-                gulpif(config.production,
+                gulpIf(config.production,
                     moreCss({
                         radical: false
                     }),
