@@ -8,8 +8,12 @@
 }
 
 // Create css classes
-@each $name, $url in $inline-images {
-    .inline-image-#{$name} {
-        @include inline-image('#{$name}');
+$include-inline-images-with-classname: false !default;
+
+@if($include-inline-images-with-classname) {
+    @each $name, $url in $inline-images {
+        .inline-image-#{$name} {
+            @include inline-image('#{$name}');
+        }
     }
 }
