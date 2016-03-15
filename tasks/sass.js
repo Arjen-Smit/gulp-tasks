@@ -1,15 +1,24 @@
 'use strict';
 
 module.exports = function(gulp, config) {
+
+    var shelljs = require('shelljs');
+    var util = require('gulp-util');
+    if (shelljs.which('scss-lint') !== null) {
+        var scssLint = require('gulp-scss-lint');
+    } else {
+        var scssLint = util.noop;
+        util.log(util.colors.red("SCSS linting is disabled"),"to enable this feature please install scss_lint '", util.colors.green("gem install scss_lint"), "'");
+    }
+
     return function() {
 
         /* define required plugins */
         var sourcemaps = require('gulp-sourcemaps');
-        var util = require('gulp-util');
         var sass = require('gulp-sass');
         var plumber = require('gulp-plumber');
         var autoprefixer = require('gulp-autoprefixer');
-        var gulpif = require('gulp-if');
+        var gulpIf = require('gulp-if');
         var moreCss = require('gulp-more-css');
         var livereload = require('gulp-livereload');
 
@@ -22,6 +31,11 @@ module.exports = function(gulp, config) {
                     this.emit('end');
                 }
             }))
+            .pipe(
+                scssLint({
+                    'config': '.scss-lint.yml'
+                })
+            )
             .pipe(sourcemaps.init())
             .pipe(sass({
                     includePaths : config.sass.includePaths
@@ -32,7 +46,7 @@ module.exports = function(gulp, config) {
                 remove: true
             }))
             .pipe(
-                gulpif(config.production,
+                gulpIf(config.production,
                     moreCss({
                         radical: false
                     }),
