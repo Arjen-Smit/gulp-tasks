@@ -1,0 +1,11 @@
+linters:
+  IdSelector:
+    enabled: false
+  Indentation:
+    width: 4
+  NestingDepth:
+    enabled: false
+  PropertySortOrder:
+    enabled: false
+  SelectorDepth:
+    enabled: false

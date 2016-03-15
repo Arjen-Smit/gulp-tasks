@@ -33,7 +33,7 @@ module.exports = function(gulp, config) {
             }))
             .pipe(
                 scssLint({
-                    'config': '.scss-lint.yml'
+                    'config': __dirname + '/sass/.scss-lint.yml'
                 })
             )
             .pipe(sourcemaps.init())
