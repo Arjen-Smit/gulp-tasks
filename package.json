@@ -1,6 +1,6 @@
 {
   "name": "connectholland-gulp-tasks",
-  "version": "2.2.3",
+  "version": "2.2.4",
   "description": "A collection of tasks to load by gulp",
   "main": "tasks/default.js",
   "dependencies": {
