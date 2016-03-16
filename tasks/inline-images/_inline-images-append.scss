@@ -1,8 +1,22 @@
 // Inline image mixin
-@mixin inline-image($name) {
-    $image-uri: map-get($inline-images, $name);
-    background-image: url('#{$image-uri}');
-    background-size: 100%;
+@mixin inline-image($name, $extend: true) {
+    $image-selector: map-get($inline-images-selectors, $name);
+
+    @if $extend == true {
+        @if $image-selector == null {
+            $image-selector: unique-id();
+            $inline-images-selectors: map-merge($inline-images-selectors, (#{$name}: $image-selector)) !global;
+
+            @at-root  %#{$image-selector} {
+				@include inline-image($name, false);
+            }
+        }
+        @extend %#{$image-selector};
+    } @else {
+        $image-uri: map-get($inline-images, $name);
+        background-image: url('#{$image-uri}');
+        background-size: 100%;
+    }
 
     @content;
 }
