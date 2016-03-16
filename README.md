@@ -117,6 +117,43 @@ if set to true all outputed files are optimized for production when running `gul
 all the settings for other tasks like sass, javascript & icons are defined below.
 
 
+## Sass task
+Add the following to the config.json
+
+```json
+"sass": {
+        "src": [
+            "style/**/*.scss"
+        ],
+        "dest": "../../web/assets/css",
+        "watch": [
+            "style/**/*.scss"
+        ],
+        "includePaths": [
+            "node_modules/compass-mixins/lib",
+            "node_modules/connectholland-sass-mixins/",
+            "node_modules/node.normalize.scss"
+        ],
+        "autoprefix": [
+            "last 2 versions",
+            "IE >= 8"
+        ]
+    }
+```
+
+###scss-lint
+To disable linting or to use a custom config file, you can add a linting object
+
+```json
+"sass": {
+        "linting": {
+            "enabled": false,
+            "configfile": ".scss-lint.yml"
+        }
+    }
+```
+
+
 ## Javascript task
 
 To use the EcmaScript 2015 (ES6) transpiling, add the following dependencies:
