@@ -1,4 +1,5 @@
 // Inline image mixin
+$inline-images-selectors: ();
 @mixin inline-image($name, $extend: true) {
     $image-selector: map-get($inline-images-selectors, $name);
 
@@ -12,13 +13,15 @@
             }
         }
         @extend %#{$image-selector};
+
+        @at-root & {
+            @content;
+        }
     } @else {
         $image-uri: map-get($inline-images, $name);
         background-image: url('#{$image-uri}');
         background-size: 100%;
     }
-
-    @content;
 }
 
 // Create css classes
