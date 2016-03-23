@@ -1,0 +1,44 @@
+{
+    "default_tasks": [
+        "sass",
+        "javascript"
+    ],
+    "install_tasks": ["icons"],
+    "production": true,
+    "sass": {
+        "src": [
+            "style/*.scss"
+        ],
+        "dest": "web/assets/css",
+        "watch": [
+            "style/**/*.scss"
+        ],
+        "includePaths": [
+            "node_modules/normalize-scss"
+        ],
+        "autoprefix": [
+            "last 2 versions"
+        ]
+    },
+    "javascript": {
+        "items": [
+            {
+                "src": [
+                    "node_modules/jquery/dist/jquery.min.js",
+                    "node_modules/jquery-noconflict/index.js"],
+                "outputname": "body.min.js",
+                "dest": "web/assets/javascript/"
+            }
+        ],
+        "watch": [
+            "javascript/**/*.js"
+        ]
+    },
+    "icons": {
+        "src": [
+            "icons/*.svg"
+        ],
+        "dest": "web/assets/fonts/",
+        "webpath": "/assets/fonts/"
+    }
+}
