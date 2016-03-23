@@ -1,7 +1,7 @@
 # Gulp tasks
 A collection of configurable tasks that can be used to generate most of the necessary frontend assets like css, javascript, fonticons and more…
 
-## Install npm (preferred)
+## Install with npm
 
 ```bash
 npm install connectholland-gulp-tasks --save-dev
