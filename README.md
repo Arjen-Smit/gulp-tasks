@@ -1,5 +1,5 @@
 # Gulp tasks
-A collection of configurable tasks that can be used to generate most of the necessary frontend files like css, javascript, fonticons and more…
+A collection of configurable tasks that can be used to generate most of the necessary frontend assets like css, javascript, fonticons and more…
 
 ## Install npm (preferred)
 
@@ -19,35 +19,6 @@ var config = require('./config.json');
 // Load the tasks usingthe taskloader
 taskLoader({
     taskDirectory: 'node_modules/connectholland-gulp-tasks/tasks',
-    config: config
-}, gulp);
-
-```
-
-## Install bower
-Add to bower.json
-
-```json
-{
-    "dependencies": {
-        "gulp-tasks": "https://github.com/ConnectHolland/gulp-tasks.git#^2.0"
-    }
-}
-```
-Because this collection of tasks is more npm minded you need to make sure you have all the node modules installed that are required by this package (https://github.com/ConnectHolland/gulp-tasks/blob/master/package.json)
-
-gulpfile.js
-
-```javascript
-'use strict';
-
-var gulp = require('gulp');
-var taskLoader = require('gulp-simple-task-loader');
-var config = require('./config.json');
-
-// Load the tasks usingthe taskloader
-taskLoader({
-    taskDirectory: 'bower_components/gulp-tasks/tasks',
     config: config
 }, gulp);
 
@@ -156,17 +127,7 @@ To disable linting or to use a custom config file, you can add a linting object
 
 ## Javascript task
 
-To use the EcmaScript 2015 (ES6) transpiling, add the following dependencies:
-
-```bash
-npm install babel-preset-es2015 gulp-babel gulp-plumber --save-dev
-```
-
-To enable the javascript linter, add eslint:
-
-```bash
-npm install gulp-eslint --save-dev
-```
+To use the EcmaScript 2015 (ES6) transpiling or to enable the javascript linter, you must enable it in the config file
 
 Example configuration:
 
