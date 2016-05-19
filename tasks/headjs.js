@@ -11,7 +11,7 @@ module.exports = function (gulp, config) {
         var include = require('gulp-include');
         var uglify = require('gulp-uglify');
 
-        util.log(util.colors.red("headjs is depricated:"),"please use the javascript task to replace headjs and bodyjs. support will be dropped in gulp-tasks 4");
+        util.log(util.colors.red("headjs is deprecated:"),"please use the javascript task to replace headjs and bodyjs. support will be dropped in gulp-tasks 4");
 
         return gulp.src(config.headjs.src)
             .pipe(sourcemaps.init())
