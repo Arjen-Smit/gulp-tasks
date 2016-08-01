@@ -7,7 +7,7 @@ module.exports = function(gulp, config) {
         var consolidate = require('gulp-consolidate');
         var rename = require('gulp-rename');
 
-        var formats = config.icons.formats || ['ttf', 'eot', 'woff', 'svg'];
+        var formats = config.icons.formats || ['ttf', 'eot', 'woff', 'woff2', 'svg'];
 
         return gulp.src(config.icons.src)
             .pipe(iconfont({
