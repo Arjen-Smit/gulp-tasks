@@ -7,10 +7,13 @@ module.exports = function(gulp, config) {
         var consolidate = require('gulp-consolidate');
         var rename = require('gulp-rename');
 
+        var formats = config.icons.formats || ['ttf', 'eot', 'woff', 'woff2', 'svg'];
+
         return gulp.src(config.icons.src)
             .pipe(iconfont({
                 fontName: 'icon',
                 normalize: true,
+                formats: formats,
                 fontHeight: 1001 }))
             .on('glyphs', function (glyphs) {
                 gulp.src(__dirname + '/icons/_template.scss')
@@ -18,6 +21,7 @@ module.exports = function(gulp, config) {
                         glyphs: glyphs,
                         fontName: 'icon',
                         fontPath: config.icons.webpath,
+                        formats: formats,
                         pseudo: 'before'
                     }))
                     .pipe(rename('_icon.scss'))
