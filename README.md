@@ -163,3 +163,24 @@ Example configuration of config.json:
     }
 ```
 
+## icons task
+
+With the icons tasks it's possible to convert a set of svg's to a font family. The result is a folder with fonts and an scss file with variables and mixins that can be used to use it in your project.
+
+Example configuration:
+
+```json
+"icons": {
+        "src": [
+            "icons/*.svg"
+        ],
+        "formats": ["ttf", "eot", "woff", "svg", "woff2"], 
+        "dest": "web/assets/fonts/",
+        "webpath": "/assets/fonts/"
+    },
+```
+
+- `src` the path to the source svg's.
+- `formats` (not required) but can be used to overwrite the font types that are generated (ttf, eot, woff, svg, woff2 is the default).
+- `dest` the path on the disk where the font will be placed
+- `webpath` the path used by the browser to request the fonts
