@@ -18,14 +18,14 @@
 $<%= fontName %>:<% _.each(glyphs, function(glyph) { %> $<%= fontName %>-<%= glyph.name %><% }); %>;
 
 @mixin <%= fontName %>($name) {
-    &:before {
+    &::before {
         @include <%= fontName %>-style($name);
         @content;
     }
 }
 
 @mixin <%= fontName %>-after($name) {
-    &:after {
+    &::after {
         @include <%= fontName %>-style($name);
         @content;
     }
