@@ -37,7 +37,6 @@ module.exports = function(gulp, config) {
         var autoprefixer = require('gulp-autoprefixer');
         var gulpIf = require('gulp-if');
         var moreCss = require('gulp-more-css');
-        var livereload = require('gulp-livereload');
 
         /* function to run on execution */
         return gulp.src(config.sass.src)
@@ -70,7 +69,7 @@ module.exports = function(gulp, config) {
                     sourcemaps.write('../maps')
                 )
             )
-            .pipe(gulp.dest(config.sass.dest))
-            .pipe(livereload());
+            .pipe(gulp.dest(config.sass.dest));
+
     };
 };

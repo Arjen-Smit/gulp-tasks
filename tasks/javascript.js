@@ -29,7 +29,6 @@ module.exports = function (gulp, config) {
 
         var sourcemaps = require('gulp-sourcemaps');
         var util = require('gulp-util');
-        var livereload = require('gulp-livereload');
         var plumber = require('gulp-plumber');
         var concat = require('gulp-concat');
         var gulpif = require('gulp-if');
@@ -62,8 +61,7 @@ module.exports = function (gulp, config) {
                         sourcemaps.write('../maps')
                     )
                 )
-                .pipe(gulp.dest(item.dest))
-                .pipe(livereload());
+                .pipe(gulp.dest(item.dest));
 
             return result;
         });
